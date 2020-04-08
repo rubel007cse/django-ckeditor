@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    {% load static %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
+</head>
+<body>
+
+<form action="{% url 'view' postid=my_objects.id %}" method="POST">
+    {% csrf_token %}
+
+<div class="django-ckeditor-widget" data-field-id="id_procedure" style="display: inline-block;">
+
+    <input type="hidden" name="postid" value="{{my_objects.id}}">
+
+    <textarea cols="40" id="id_procedure" maxlength="2000" name="content" rows="10"
+              required data-processed="0"
+              data-config='{"skin": "moono-lisa", "toolbar_Basic": [["Source", "-", "Bold", "Italic"]],
+               "toolbar_Full": [["Styles", "Format", "Bold", "Italic", "Underline",
+                "Strike", "SpellChecker", "Undo", "Redo"], ["Link", "Unlink", "Anchor"],
+                ["Image", "Flash", "Table", "HorizontalRule"], ["TextColor", "BGColor"], ["Smiley", "SpecialChar"], ["Source"]],
+                "toolbar": "Full", "height": 291, "width": 835, "filebrowserWindowWidth": 940,
+                "filebrowserWindowHeight": 725, "language": "en-us"}'
+              data-external-plugin-resources="[]" data-id="id_procedure" data-type="ckeditortype">
+
+        {{my_objects.content}}
+    </textarea>
+
+  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Save in</button>
+</div>
+
+
+</form>
+
+</body>
+</html>
