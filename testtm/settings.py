@@ -43,7 +43,6 @@ INSTALLED_APPS = [
 
 ]
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 
 MIDDLEWARE = [
@@ -125,7 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'C:/Users/Mosharrof/1Pycharms/tinymce/testtm/static'
+#STATIC_ROOT = 'C:/Users/Mosharrof/1Pycharms/tinymce/ckeditor-project/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'C:/Users/Mosharrof/1Pycharms/tinymce/testtm/media'
+#MEDIA_ROOT = 'C:/Users/Mosharrof/1Pycharms/tinymce/ckeditor-project/media/'
+
+CKEDITOR_UPLOAD_PATH = 'uploads_xyz/'
